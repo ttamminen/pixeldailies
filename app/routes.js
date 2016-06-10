@@ -1,7 +1,7 @@
 require('node-jsx').install({extension: '.jsx'});
 var React = require('react'),
   ReactDOMServer = require('react-dom/server'),
-  TweetsApp = React.createFactory(require('./components/TweetsApp')),
+  TweetsApp = React.createFactory(require('./components/PixelDailiesApp')),
   Tweet = require('./models/Tweet');
 
 module.exports = {
