@@ -11,7 +11,8 @@ var express = require('express'),
 var app = express();
 var port = process.env.PORT || 8080;
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('views', __dirname + '/views');
+app.engine('handlebars', exphbs({ defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts'}));
 app.set('view engine', 'handlebars');
 app.disable('etag');
 
@@ -21,7 +22,7 @@ var twitter = new twitterClient(config.twitter);
 
 app.get('/', routes.index);
 app.get('/page/:page/:skip', routes.page);
-app.use('/', express.static(__dirname + '/public/'));
+app.use('/', express.static('./public/'));
 
 var server = http.createServer(app).listen(port, function() {
   console.log('Express server listening on port ' + port);
