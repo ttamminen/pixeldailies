@@ -1,0 +1,53 @@
+{
+  "name": "pixel_dailies",
+  "version": "1.0.0",
+  "description": "pixeldailies Twitter hashtag visualizer",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "node-sass assets/styles/main.scss public/css/style.min.css",
+    "watch:css": "watch \"npm run build:css\" ./assets/styles",
+    "build:js": "browserify app/app.js | uglifyjs > public/js/bundle.js",
+    "watch:js": "watchify app/app.js -o public/js/bundle.js -v",
+    "serve": "node main.js",
+    "watch": "parallelshell \"npm run watch:css\" \"npm run watch:js\"",
+    "build": "parallelshell \"npm run build:css\" \"npm run build:js\"",
+    "build:watch": "parallelshell \"npm run build\" \"npm run watch\"",
+    "build:watch:serve": "parallelshell \"npm run build:watch\" \"npm run serve\"",
+    "start": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttamminen/pixeldailies.git"
+  },
+  "author": "Tatu Tamminen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttamminen/pixeldailies/issues"
+  },
+  "homepage": "https://github.com/ttamminen/pixeldailies#readme",
+  "dependencies": {
+    "express": "~4.9.7",
+    "express-handlebars": "~1.1.0",
+    "mongoose": "^4.2.6",
+    "node-jsx": "0.13.3",
+    "node-sass": "^3.7.0",
+    "pm2": "^1.1.3",
+    "react": "15.1.0",
+    "react-dom": "^15.1.0",
+    "socket.io": "^1.1.0",
+    "twitter": "^1.2.0"
+  },
+  "devDependencies": {
+    "browserify": "13.0.1",
+    "parallelshell": "^2.0.0",
+    "reactify": "~1.1.1",
+    "uglify-js": "~2.4.15",
+    "watch": "^0.18.0",
+    "watchify": "^3.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
