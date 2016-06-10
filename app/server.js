@@ -29,6 +29,6 @@ var server = http.createServer(app).listen(port, function() {
 
 var comm = socketio.listen(server);
 
-twitter.stream('statuses/filter', { track: 'javascript'}, function(stream){
+twitter.stream('statuses/filter', { track: '@Pixel_Dailies #pixel_dailies'}, function(stream){
   twitterHandler(stream, comm);
 });
