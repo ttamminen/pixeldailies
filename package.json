@@ -6,8 +6,8 @@
   "scripts": {
     "build:css": "node-sass assets/styles/main.scss public/css/style.min.css",
     "watch:css": "watch \"npm run build:css\" ./assets/styles",
-    "build:js": "browserify app/app.js | uglifyjs > public/js/bundle.js",
-    "watch:js": "watchify app/app.js -o public/js/bundle.js -v",
+    "build:js": "browserify app/app.js | uglifyjs > public/bundle.js",
+    "watch:js": "watchify app/app.js -o public/bundle.js -v",
     "serve": "node main.js",
     "watch": "parallelshell \"npm run watch:css\" \"npm run watch:js\"",
     "build": "parallelshell \"npm run build:css\" \"npm run build:js\"",
