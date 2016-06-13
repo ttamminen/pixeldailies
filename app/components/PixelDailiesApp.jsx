@@ -91,7 +91,7 @@ var TweetsApp = React.createClass({
   render: function() {
     return (
       <div className="pixeldailies">
-        <h1 className="center-align">Pixel Dailies</h1>
+        <h1 className="blue darken-2 center-align">Pixel Dailies</h1>
         <Tweets tweets={this.state.tweets} />
         <Loader paging={this.state.paging}/>
         <NotificationBar count={this.state.count} onShowNewTweets={this.showNewTweets}/>
