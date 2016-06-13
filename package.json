@@ -13,7 +13,8 @@
     "build": "parallelshell \"npm run build:css\" \"npm run build:js\"",
     "build:watch": "parallelshell \"npm run build\" \"npm run watch\"",
     "build:watch:serve": "parallelshell \"npm run build:watch\" \"npm run serve\"",
-    "start": "npm install"
+    "start": "npm install",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
