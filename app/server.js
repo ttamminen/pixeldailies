@@ -16,7 +16,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main', layoutsDir: __dirname +
 app.set('view engine', 'handlebars');
 app.disable('etag');
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/pixeldailies');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pixeldailies');
 
 var twitter = new twitterClient(config.twitter);
 
